@@ -19,11 +19,11 @@ export class FooComponent {
     this.loading = true;
     this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
     this.o.subscribe(this.getData);
-    console.log(this.data);
   }
   getData = (d: Object) => {
     this.data = new Object(d);
     this.loading = false;
+    console.log(this.data);
   }
   //Nota bene, questo è un metodo alternativo e compatto per fare la stessa cosa di
   //makeRequest senza dichiarare la variabile Observable e creando l’arrow function
@@ -45,7 +45,7 @@ export class FooComponent {
     this.oFoo.subscribe(data => {
       this.fooData = data;
       this.loading = false;
+      console.log(this.fooData);
     });
-    console.log(this.fooData);
   }
 }
